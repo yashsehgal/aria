@@ -6,7 +6,10 @@ const LargeHeading: React.FunctionComponent<
   return (
     <>
       <h1
-        className={cn('text-5xl tracking-tight font-bold leading-snug')}
+        className={cn(
+          'text-5xl tracking-tight font-bold leading-snug',
+          className,
+        )}
         {...attr}>
         {attr?.children}
       </h1>
@@ -67,9 +70,9 @@ const Paragraph: React.FunctionComponent<ParagraphProps> = ({
     <>
       <p
         className={cn(
-          'font-normal mt-2',
-          className,
+          'font-normal',
           type === 'base' ? 'text-base' : 'text-sm',
+          className,
         )}
         {...attr}>
         {attr?.children}

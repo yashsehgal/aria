@@ -36,23 +36,22 @@ const AccordionItemContext = React.createContext({
 });
 
 const AccordionItem: React.FunctionComponent<
-  React.HTMLAttributes<HTMLElement>
-> = ({ className, ...attr }) => {
+  React.DetailsHTMLAttributes<HTMLDetailsElement>
+> = ({ className, open = false, ...attr }) => {
+  const [isAccordionOpen, setIsAccordionOpen] = React.useState(open);
   return (
     <AccordionContext.Consumer>
       {(ACCORDION_CONTEXT) => (
-        <AccordionItemContext.Consumer>
-          {(ACCORDION_ITEM_CONTEXT) => (
-            <details
-              className={cn(
-                'accordion-item w-full border-b border-gray-200',
-                className,
-              )}
-              {...attr}>
-              {attr?.children}
-            </details>
-          )}
-        </AccordionItemContext.Consumer>
+        <AccordionItemContext.Provider value={{ isOpen: isAccordionOpen }}>
+          <details
+            className={cn(
+              'accordion-item w-full border-b border-gray-200',
+              className,
+            )}
+            {...attr}>
+            {attr?.children}
+          </details>
+        </AccordionItemContext.Provider>
       )}
     </AccordionContext.Consumer>
   );
@@ -62,7 +61,7 @@ AccordionItem.displayName = 'AccordionItem';
 const AccordionTrigger: React.FunctionComponent<
   React.HTMLAttributes<HTMLElement>
 > = ({ className, ...attr }) => {
-    const [isAccordionOpen, setIsAccordionOpen] = React.useState(false);
+  const [isAccordionOpen, setIsAccordionOpen] = React.useState(false);
   return (
     <summary
       className={cn(
@@ -70,14 +69,18 @@ const AccordionTrigger: React.FunctionComponent<
         className,
       )}
       onClick={() => {
-        setIsAccordionOpen(!isAccordionOpen)
+        setIsAccordionOpen(!isAccordionOpen);
       }}
       {...attr}>
       <span className="accordion-trigger-summary-content">
         {attr?.children}
       </span>
       <span className="accordion-chevronIcon-wrapper">
-        {!isAccordionOpen ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
+        {!isAccordionOpen ? (
+          <ChevronDown className="w-4 h-4" />
+        ) : (
+          <ChevronUp className="w-4 h-4" />
+        )}
       </span>
     </summary>
   );
