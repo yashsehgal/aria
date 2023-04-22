@@ -1,0 +1,14 @@
+[
+  {
+    "componentName": "Button",
+    "description": "A functional button component used for triggers, submitting forms, everything that a generic button component does.",
+    "redirectTo": "/buttons",
+    "componentStatus": "Beta"
+  },
+  {
+    "componentName": "Typography",
+    "description": "A collection of typography elements, that are customizable. Gives a clean and modern feel to your UI design system.",
+    "redirectTo": "/typography",
+    "componentStatus": "Beta"
+  }
+]
