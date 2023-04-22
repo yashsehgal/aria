@@ -1,7 +1,7 @@
 import { cn } from '@/scripts/utils';
 import { Paragraph } from '../primitives/typography';
 import Link from 'next/link';
-import Button from '../primitives/buttons';
+import Button from '../primitives/button';
 
 const NavbarOptions: Array<{
   name: string;

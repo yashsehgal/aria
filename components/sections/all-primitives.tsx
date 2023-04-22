@@ -5,7 +5,7 @@ import {
   Paragraph,
   SmallHeading,
 } from '../primitives/typography';
-import Button from '../primitives/buttons';
+import Button from '../primitives/button';
 import Link from 'next/link';
 
 const AllPrimitives: React.FunctionComponent<

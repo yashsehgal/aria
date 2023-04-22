@@ -1,6 +1,6 @@
 import { cn } from '@/scripts/utils';
 import { LargeHeading, Paragraph } from '../primitives/typography';
-import Button from '../primitives/buttons';
+import Button from '../primitives/button';
 import Link from 'next/link';
 
 const HeroSection: React.FunctionComponent<
