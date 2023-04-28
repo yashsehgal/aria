@@ -1,12 +1,14 @@
 import { cn } from '@/scripts/utils';
 import AllPrimitivesData from '@/lib/localdb/primitives.json';
-import {
-  LargeHeading,
-  Paragraph,
-  SmallHeading,
-} from '../primitives/typography';
+import { Paragraph, SmallHeading } from '../primitives/typography';
 import Button from '../primitives/button';
 import Link from 'next/link';
+import {
+  FormContainer,
+  FormInput,
+  FormInputItem,
+  FormInputSupportText,
+} from '../primitives/input';
 
 const AllPrimitives: React.FunctionComponent<
   React.HTMLAttributes<HTMLDivElement>
@@ -32,7 +34,7 @@ const AllPrimitives: React.FunctionComponent<
                 />
               </div>
               <SmallHeading>{primitive?.componentName}</SmallHeading>
-              <Paragraph className="text-gray-500">
+              <Paragraph className="text-gray-500 mt-1">
                 {primitive?.description}
               </Paragraph>
             </div>
@@ -59,6 +61,28 @@ const PrimitiveDemoComponent: React.FunctionComponent<{
       return (
         <div className="demo-typography-container">
           <SmallHeading>Better Typography.</SmallHeading>
+        </div>
+      );
+    case 'Form Elements':
+      return (
+        <div className="demo-form-elements-container w-[280px]">
+          <FormContainer className="grid grid-cols-1 gap-4">
+            <FormInputItem>
+              <FormInput
+                type={'email'}
+                placeholder={'Enter a username'}
+                wFull
+              />
+            </FormInputItem>
+            <FormInputItem>
+              <FormInput
+                type={'password'}
+                placeholder={'Create a password'}
+                wFull
+              />
+            </FormInputItem>
+            <Button>Create account</Button>
+          </FormContainer>
         </div>
       );
     default:

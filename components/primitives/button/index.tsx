@@ -20,7 +20,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   return (
     <button
       className={cn(
-        'px-5 py-2 rounded-md border flex flex-row items-center justify-center gap-1.5 font-medium text-sm focus:ring-2 focus:ring-offset-1 focus:ring-gray-300 transition-all',
+        'px-5 py-2 rounded-md border flex flex-row items-center justify-center gap-1.5 font-medium text-sm focus:ring-2 focus:ring-offset-1 focus:ring-gray-300 focus:outline-none transition-all',
         ButtonTypeStyle[variant],
         wFull && 'w-full',
         className,

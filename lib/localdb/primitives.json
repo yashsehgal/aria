@@ -10,5 +10,11 @@
     "description": "A collection of typography elements, that are customizable. Gives a clean and modern feel to your UI design system.",
     "redirectTo": "/typography",
     "componentStatus": "Beta"
+  },
+  {
+    "componentName": "Form Elements",
+    "description": "All the HTML Form elements such as Text Input, File Upload, Checkbox, Radio and etc. Completely customizable.",
+    "redirectTo": "/form-elements",
+    "componentStatus": "Beta"
   }
 ]

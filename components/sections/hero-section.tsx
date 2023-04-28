@@ -16,7 +16,8 @@ const HeroSection: React.FunctionComponent<
       <Paragraph className="text-gray-500 my-4">
         A collection of web-accessible components for your react projects.{' '}
         <br />
-        Easily customizable, boosts your website&apos;s lighthouse performance <br />
+        Easily customizable, boosts your website&apos;s lighthouse performance{' '}
+        <br />
         and takes care of the accessiblity.
       </Paragraph>
       <div className="my-4 flex flex-row items-center justify-start gap-2">
